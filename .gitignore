@@ -1,2 +1,4 @@
 .git/
 **/*.js
+built/
+node_modules/

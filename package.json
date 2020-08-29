@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx tsc && node ./built/index.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/m-narminov/eventLoop/issues"
   },
-  "homepage": "https://github.com/m-narminov/eventLoop#readme"
+  "homepage": "https://github.com/m-narminov/eventLoop#readme",
+  "devDependencies": {
+    "typescript": "^4.0.2"
+  }
 }
