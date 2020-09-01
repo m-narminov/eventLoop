@@ -1,11 +1,11 @@
-const asyncExample = require('./async')
-const { promiseResolveExample, promiseRejectExample } = require('./promise')
-const observableExample = require('./observable')
+import { asyncAwait } from './async'
+import { promiseResolveExample, promiseRejectExample } from './promise'
+import { observableExample } from './observable'
 
-const eventLoop = () => {
-  console.log()
-}
+asyncAwait()
 
 promiseResolveExample()
 
 promiseRejectExample()
+
+observableExample()
