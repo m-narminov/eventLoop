@@ -1,26 +1,39 @@
 export const promiseResolveExample = () => {
-  const promise = new Promise((resolve, reject) => {
+  const promise: Promise<number> = new Promise((resolve, reject) => {
     resolve(123)
   })
-  promise
-    .then(res => {
-      console.log(`Promise resolve ${res}`)
-    })
-    .catch(e => {
-      console.log(`Promise resolve error ${e}`)
-    })
+  return promise
 }
 
 export const promiseRejectExample = () => {
-  const promise = new Promise((resolve, reject) => {
+  const promise: Promise<number> = new Promise((resolve, reject) => {
     reject(0)
   })
 
-  promise
+  return promise
+}
+
+export const promiseExample = () => {
+  console.log('=========== Promise ===========')
+  promiseResolveExample()
     .then(res => {
-      console.log('Promise reject then ') // unreachable
+      console.log(res)
     })
     .catch(e => {
-      console.log(`Promise reject error ${e}`)
+      console.log(`Error in Promise example: ${e.message}`)
+    })
+    .finally(() => {
+      console.log('=========== Promise resolve ===========')
+    })
+
+  promiseRejectExample()
+    .then(res => {
+      console.log(res)
+    })
+    .catch(e => {
+      console.log(`Error in Promise example: ${e}`)
+    })
+    .finally(() => {
+      console.log('=========== Promise reject ===========')
     })
 }

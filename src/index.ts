@@ -1,11 +1,13 @@
+import { eventLoop } from './eventLoop'
 import { asyncAwait } from './async'
-import { promiseResolveExample, promiseRejectExample } from './promise'
+import { promiseExample } from './promise'
 import { observableExample } from './observable'
 
-asyncAwait()
+async function main() {
+  eventLoop()
+  await asyncAwait()
+  await promiseExample()
+  observableExample()
+}
 
-promiseResolveExample()
-
-promiseRejectExample()
-
-observableExample()
+main()
