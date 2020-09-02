@@ -1,22 +1,3 @@
-class Subject {
-  constructor() {}
-}
-
-class Subscription {
-  constructor(to: Observable) {}
-}
-
-class Observer {
-  next: Function
-  error: Function
-  complete: Function
-  constructor({ next, error, complete }) {
-    this.next = next
-    this.error = error
-    this.complete = complete
-  }
-}
-
 class Observable {
   a: number
   str: string
@@ -31,10 +12,6 @@ class Observable {
         return true
       },
     })
-  }
-
-  subscribe({ next, error, complete }): Subscription {
-    return new Subscription(this)
   }
 }
 
